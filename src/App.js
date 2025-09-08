@@ -11,6 +11,7 @@ import { motion, useInView } from 'framer-motion';
 import Ministry from './pages/Ministry';
 import Boys from './pages/Boys';
 import Retreats from './pages/Retreat';
+import { HelmetProvider } from 'react-helmet-async';
 // Loader Component
 const Loader = () => {
   return (
@@ -40,8 +41,8 @@ function App() {
   }, []);
 
   return (
-
- <Router>
+ <HelmetProvider>
+   <Router>
   <motion.div
     ref={ref}
     initial={{opacity:0}}
@@ -74,6 +75,8 @@ function App() {
     </motion.div>
     
     </Router>
+ </HelmetProvider>
+
   
    
   );

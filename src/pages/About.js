@@ -89,12 +89,23 @@ const About = () => {
     <div className="w-full font-Fira">
       {/* SEO Metadata */}
       <Helmet>
-        <title>About Us | St stephen's protestant church</title>
+        <title>About Us | St. Stephen's Protestant Church</title>
         <meta
           name="description"
-          content="Learn about St stephen's church of God, join us and worship"
+          content="Discover the mission, vision, and leadership of St. Stephen's Protestant Church. Learn about our chaplains, values, and commitment to serving the community."
         />
-        <meta name="keywords" content="Church, About, Saint, Stephen's" />
+        <meta
+          name="keywords"
+          content="St. Stephen's Church, Protestant Church Nigeria, Christian fellowship, chaplains, community service, worship, faith, hope, love"
+        />
+        <meta property="og:title" content="About Us | St. Stephen's Protestant Church" />
+        <meta
+          property="og:description"
+          content="Learn about St. Stephen's Protestant Church, our mission, vision, chaplains, and our dedication to faith and community service."
+        />
+        <meta property="og:image" content={image1} />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://yourwebsite.com/about" />
       </Helmet>
 
       {/* Hero Section */}

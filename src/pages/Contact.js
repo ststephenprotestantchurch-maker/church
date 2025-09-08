@@ -8,6 +8,7 @@ import { motion , MotionContext } from 'framer-motion';
 import call from '../assets/img/phone-call_18182655.png'
 import email from '../assets/img/invitation_2931204.png'
 import map from '../assets/img/church-location_17875712.png'
+import { Helmet } from "react-helmet-async";
 const Contact = () => {
   const contactMethods = [
     {
@@ -36,13 +37,61 @@ const Contact = () => {
   return (
     <div className="w-full font-Fira ">
       {/* SEO Metadata */}
-      <head>
-        <title>Contact Us | St.stephen's church</title>
+       <Helmet>
+        <title>Contact Us | St. Stephen's Protestant Church</title>
         <meta
           name="description"
-          content="Get in touch with St.stephen church, support, or any inquiries. Contact us via email or call us."
+          content="Reach out to St. Stephen's Protestant Church for inquiries, support, and community engagement. Find our contact number, email, and location in Oshodi, Lagos, Nigeria."
         />
-      </head>
+        <link
+          rel="canonical"
+          href="https://www.ststephenprotestantchurch.com/contact"
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="Contact Us | St. Stephen's Church" />
+        <meta
+          property="og:description"
+          content="Get in touch with St. Stephen's Protestant Church in Oshodi, Lagos. Call, email, or visit us today."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.ststephenprotestantchurch.com/contact"
+        />
+        <meta property="og:image" content={image1} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Contact St. Stephen's Protestant Church"
+        />
+        <meta
+          name="twitter:description"
+          content="Call, email, or locate St. Stephen's Protestant Church in Oshodi, Lagos."
+        />
+        <meta name="twitter:image" content={image1} />
+
+        {/* Schema.org JSON-LD for LocalBusiness/Church */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Church",
+            name: "St. Stephen's Protestant Church",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Nigerian Armed Forces Resettlement Center",
+              addressLocality: "Oshodi",
+              addressRegion: "Lagos",
+              addressCountry: "NG",
+            },
+            telephone: "+2347032239746",
+            email: "st.stephenprotestantchurch@gmail.com",
+            url: "https://www.ststephenprotestantchurch.com/contact",
+          })}
+        </script>
+      </Helmet>
 
      {/* Hero Section */}
 <section className="relative w-full h-[300px] md:h-[400px]">

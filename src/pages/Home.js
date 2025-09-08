@@ -172,14 +172,31 @@ const Home = ({isVisible}) => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <Helmet >
-        <title>Home - Welcome to churh</title>
-        <meta
-          name="description"
-          content="Come and worship with us as we preach the gospel"
-        />
-        <meta name="keywords" content="chuch, gospel , thanksgiving, prayer" />
-      </Helmet>
+     <Helmet>
+  {/* Primary Meta Tags */}
+  <title>Home - Welcome to Church</title>
+  <meta name="title" content="Home - Welcome to Church" />
+  <meta
+    name="description"
+    content="Come and worship with us as we preach the gospel."
+  />
+  <meta name="keywords" content="church, gospel, thanksgiving, prayer, worship, Sunday service" />
+  <link rel="canonical" href="https://ststephensprotestantchurch.vercel.app/" />
+
+  {/* Open Graph / Facebook */}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ststephensprotestantchurch.vercel.app/" />
+  <meta property="og:title" content="Home - Welcome to Church" />
+  <meta property="og:description" content="Come and worship with us as we preach the gospel." />
+  <meta property="og:image" content="https://ststephensprotestantchurch.vercel.app/assets/img/chuch1.jpg" />
+
+  {/* Twitter */}
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ststephensprotestantchurch.vercel.app/" />
+  <meta property="twitter:title" content="Home - Welcome to Church" />
+  <meta property="twitter:description" content="Come and worship with us as we preach the gospel." />
+  <meta property="twitter:image" content="https://ststephensprotestantchurch.vercel.app/assets/img/chuch1.jpg" />
+</Helmet>
 
       <motion.main 
       initial={{ opacity: 0, y: 50 }}

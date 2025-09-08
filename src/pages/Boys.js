@@ -94,12 +94,42 @@ const Boys = () => {
     <div className="w-full font-Fira">
       {/* SEO Metadata */}
       <Helmet>
-        <title>Ministry | St Stephen's </title>
+        <title>Boys Brigade Ministry | St. Stephen's Church</title>
         <meta
           name="description"
-          content="Gallery of church bigrade"
+          content="Explore the Boys Brigade ministry at St. Stephen's Church. A gallery showcasing the activities, training, and spiritual development of our youth members."
         />
-        <meta name="keywords" content="Boys, Bigrade , gallery, St.Stephen's" />
+        <meta
+          name="keywords"
+          content="Boys Brigade, Church Ministry, Youth Ministry, St Stephen's Church, Brigade Gallery, Christian Youth"
+        />
+        <meta property="og:title" content="Boys Brigade Ministry | St. Stephen's Church" />
+        <meta property="og:description" content="Discover the Boys Brigade gallery at St. Stephen's Church. See how our youth engage in faith, discipline, and community service." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={boybigrade} />
+        <meta property="og:url" content="https://ststephensprotestantchurch.vercel.app/boys-brigade" />
+        <link rel="canonical" href="https://ststephensprotestantchurch.vercel.app/boys-brigade" />
+
+        {/* ✅ Schema.org Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "St. Stephen's Protestant Church",
+            "url": "https://ststephensprotestantchurch.vercel.app/",
+            "logo": "https://ststephensprotestantchurch.vercel.app/logo.png",
+            "department": {
+              "@type": "Organization",
+              "name": "Boys Brigade Ministry",
+              "description": "A youth ministry of St. Stephen's Church focused on discipline, leadership, and Christian values.",
+              "parentOrganization": {
+                "@type": "Organization",
+                "name": "St. Stephen's Protestant Church"
+              }
+            },
+            "image": BoysBriadge.map(b => b.image)
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}

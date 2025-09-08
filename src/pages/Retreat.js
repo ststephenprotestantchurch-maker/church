@@ -66,13 +66,47 @@ const Retreats = () => {
   return (
     <div className="w-full font-Fira">
       {/* SEO Metadata */}
-      <Helmet>
-        <title>Event | St Stephen's </title>
+        <Helmet>
+        <title>Church Workers Retreat | St. Stephen's Church</title>
         <meta
           name="description"
-          content="Church workers retreat"
+          content="Join the Church Workers Retreat at St. Stephen's Church. A time of renewal, learning, and spiritual growth for church workers and volunteers."
         />
-        <meta name="keywords" content="retreat, church , workers" />
+        <meta
+          name="keywords"
+          content="Church Retreat, Workers Retreat, St Stephen's Church, Church Events, Spiritual Renewal, Christian Fellowship"
+        />
+        <meta property="og:title" content="Church Workers Retreat | St. Stephen's Church" />
+        <meta property="og:description" content="Discover our Church Workers Retreat designed to equip and inspire workers for service at St. Stephen's Church." />
+        <meta property="og:type" content="event" />
+        <meta property="og:image" content={retreat} />
+        <meta property="og:url" content="https://ststephensprotestantchurch.vercel.app/retreats" />
+        <link rel="canonical" href="https://ststephensprotestantchurch.vercel.app/retreats" />
+
+        {/* ✅ Schema.org Structured Data for Event */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "Church Workers Retreat",
+            "startDate": "2025-11-10", // ⬅️ replace with real retreat date
+            "endDate": "2025-11-15",   // ⬅️ replace with real retreat end date
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+              "@type": "Place",
+              "name": "St. Stephen's Protestant Church",
+              "address": "Nigerian Armed Forces Resettlement Center, Oshodi"
+            },
+            "image": Workers.map(w => w.image),
+            "description": "The St. Stephen's Church Workers Retreat is a spiritual gathering for workers and volunteers to strengthen faith, leadership, and service.",
+            "organizer": {
+              "@type": "Organization",
+              "name": "St. Stephen's Protestant Church",
+              "url": "https://ststephensprotestantchurch.vercel.app"
+            }
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}

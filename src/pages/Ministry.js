@@ -88,12 +88,15 @@ const Ministry = () => {
     <div className="w-full font-Fira">
       {/* SEO Metadata */}
       <Helmet>
-        <title>Ministry | St Stephen's </title>
+        <title>Ministry | St Stephen&apos;s</title>
         <meta
           name="description"
-          content="Learn about our church ministry "
+          content="Learn about the ministries at St Stephen's church including Women, Children, Ushers, Boys Brigade, and Men Fellowship."
         />
-        <meta name="keywords" content="Minstry, church, group" />
+        <meta
+          name="keywords"
+          content="Ministry, church, groups, St Stephen's, Women Group, Children Group, Ushers, Boys Brigade, Men Fellowship"
+        />
       </Helmet>
 
       {/* Hero Section */}

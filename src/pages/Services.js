@@ -22,6 +22,7 @@ import baptism from '../assets/img/baptistsm.jpg'
 import youth from '../assets/img/ester.jpg'
 import church3 from '../assets/img/churchp.jpg'
 import church4 from '../assets/img/churchpics.jpg'
+import { Helmet } from 'react-helmet-async'
 const Services = () => {
   const [activeText, setActiveText] = useState(null);
 
@@ -67,17 +68,48 @@ const Services = () => {
   return (
     <div className="w-full  font-Fira">
       {/* SEO Meta Tags */}
-      <head>
-  <title>Church Support | Special Events | Online Services</title>
-  <meta
-    name="description"
-    content="Providing exceptional church support, organizing special events, and enabling seamless online services tailored to your needs."
-  />
-  <meta
-    name="keywords"
-    content="Church Support, Special Events, Online Church Services, Community Events, Church Management"
-  />
-</head>
+  <Helmet>
+        <title>Church Support | Special Events | Online Services</title>
+        <meta
+          name="description"
+          content="Explore St. Stephen's Church services, upcoming events, and community support programs. Join us online or at our location."
+        />
+        <meta
+          name="keywords"
+          content="St Stephen's Church, Church Support, Special Events, Online Services, Community Fellowship, Nigeria Church Events"
+        />
+        <meta property="og:title" content="Church Support | Special Events | Online Services" />
+        <meta property="og:description" content="Learn about our special events, online services, and ways to get involved with St. Stephen's Church." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={church4} />
+        <meta property="og:url" content="https://ststephensprotestantchurch.vercel.app/services" />
+        <link rel="canonical" href="https://ststephensprotestantchurch.vercel.app/services" />
+
+        {/* ✅ Schema.org Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Church",
+            "name": "St. Stephen's Protestant Church",
+            "url": "https://ststephensprotestantchurch.vercel.app/services",
+            "logo": "https://ststephensprotestantchurch.vercel.app/logo.png",
+            "description": "Providing church support, special events, and online services for the community.",
+            "event": events.map(event => ({
+              "@type": "Event",
+              "name": event.title,
+              "startDate": event.description,
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "location": {
+                "@type": "Place",
+                "name": "St. Stephen's Church",
+                "address": "Nigerian Armed Forces Resettlement Center, Oshodi"
+              },
+              "image": event.image
+            }))
+          })}
+        </script>
+      </Helmet>
 
 
    {/* Hero Section */}
